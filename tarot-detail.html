@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarot Readings - Divinity Swati Sobti</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <button class="back-button" onclick="window.location.href='index.html'">← Back Home</button>
+        <a class="logo" href="index.html" aria-label="Divinity Swati Sobti"><img src="public/divinity-logo.jpeg" alt="Divinity Swati Sobti Logo"></a>
+        <div style="width: 100px;"></div>
+    </nav>
+
+    <div class="page-title">
+        <h1>Tarot Card Readings</h1>
+        <p style="color: var(--text-muted); font-size: 1.2rem;">Explore the Mysteries of Each Card</p>
+    </div>
+
+    <div class="content">
+        <div class="tarot-grid">
+            <div class="tarot-expanded">
+                <div class="tarot-icon">🌙</div>
+                <div class="tarot-name">The Moon</div>
+                <div class="tarot-meaning">Intuition & Mystery</div>
+                <div class="tarot-description">
+                    <p>The Moon represents the realm of intuition, dreams, and the subconscious mind. This powerful card suggests that you should trust your inner voice and pay attention to the subtle messages coming from within. It's a time to explore your emotions and the hidden aspects of your psyche.</p>
+                    <p>When The Moon appears in your reading, it often signals a period of uncertainty or illusion that requires careful navigation. However, it also brings opportunities for profound spiritual insights and emotional healing. The card encourages you to journey inward and discover the wisdom that lies within your own heart.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Key Interpretations:</h3>
+                    <p>✨ Trusting your intuition<br>
+                    ✨ Exploring the subconscious<br>
+                    ✨ Healing emotional wounds<br>
+                    ✨ Embracing mystery and uncertainty<br>
+                    ✨ Navigating through illusions</p>
+                </div>
+                <button class="cta-button" onclick="window.UpiPayment ? window.UpiPayment.bookTarotReading('The Moon') : window.AstrologyWhatsApp.openBookingRequest('a tarot reading for The Moon')">Book a Reading</button>
+            </div>
+
+            <div class="tarot-expanded">
+                <div class="tarot-icon">⭐</div>
+                <div class="tarot-name">The Star</div>
+                <div class="tarot-meaning">Hope & Guidance</div>
+                <div class="tarot-description">
+                    <p>The Star is a beacon of hope and inspiration. It brings clarity to your path and suggests that brighter days are ahead. This card encourages you to follow your dreams and believe in the possibilities that life offers. It's a reminder that you are guided by something greater.</p>
+                    <p>This is one of the most positive cards you can receive. It speaks of faith, renewed confidence, and spiritual awakening. The Star wants you to know that no matter what challenges you've faced, there is always light at the end of the tunnel. Your path is illuminated and your dreams are within reach.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Key Interpretations:</h3>
+                    <p>✨ Finding your true path<br>
+                    ✨ Renewed hope and inspiration<br>
+                    ✨ Spiritual connection<br>
+                    ✨ Clarity and direction<br>
+                    ✨ Divine guidance and protection</p>
+                </div>
+                <button class="cta-button" onclick="window.UpiPayment ? window.UpiPayment.bookTarotReading('The Star') : window.AstrologyWhatsApp.openBookingRequest('a tarot reading for The Star')">Book a Reading</button>
+            </div>
+
+            <div class="tarot-expanded">
+                <div class="tarot-icon">☀️</div>
+                <div class="tarot-name">The Sun</div>
+                <div class="tarot-meaning">Joy & Success</div>
+                <div class="tarot-description">
+                    <p>The Sun card radiates positivity, success, and vitality. It signals a time of happiness, achievement, and enlightenment. This is one of the most positive cards in the deck, suggesting that your efforts will be rewarded and your goals are within reach. Embrace the warmth and energy this card brings.</p>
+                    <p>When The Sun appears, it promises clarity, abundance, and the fulfillment of your desires. It brings warmth to all situations and illuminates even the darkest corners. This is a time to celebrate your achievements, bask in your success, and share your joy with others around you.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Key Interpretations:</h3>
+                    <p>✨ Success and achievement<br>
+                    ✨ Joy and happiness<br>
+                    ✨ Vitality and energy<br>
+                    ✨ Enlightenment and clarity<br>
+                    ✨ Abundance and prosperity</p>
+                </div>
+                <button class="cta-button" onclick="window.UpiPayment ? window.UpiPayment.bookTarotReading('The Sun') : window.AstrologyWhatsApp.openBookingRequest('a tarot reading for The Sun')">Book a Reading</button>
+            </div>
+        </div>
+
+        <div class="info-section" style="margin-top: 4rem; border-bottom: 2px solid rgba(212, 175, 55, 0.3);">
+            <h3>About Tarot Readings</h3>
+            <p>Tarot readings offer profound insights into your life, relationships, career, and spiritual path. Each card carries deep symbolic meaning that can help guide your decisions and illuminate hidden aspects of your situation. Our experienced readers interpret the cards with wisdom and intuition to provide you with meaningful guidance tailored to your specific questions and circumstances.</p>
+            <p style="margin-top: 1rem;">Whether you're facing a major life decision, seeking clarity about a relationship, or wanting to understand your spiritual purpose, tarot readings provide a unique and powerful tool for self-discovery and empowerment.</p>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a class="whatsapp-float" href="https://wa.me/919625746605" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <script src="logo.js"></script>
+    <script src="whatsapp-fix.js"></script>
+    <script src="whatsapp-contact.js"></script>
+    <script src="phonepe-payment.js"></script>
+</body>
+</html>

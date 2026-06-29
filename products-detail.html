@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mystical Products - Astrology Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <button class="back-button" onclick="window.location.href='index.html'">← Back Home</button>
+        <a class="logo" href="index.html" aria-label="Divinity Swati Sobti"><img src="public/divinity-logo.jpeg" alt="Divinity Swati Sobti Logo"></a>
+        <div style="width: 100px;"></div>
+    </nav>
+
+    <div class="page-title">
+        <h1>Mystical Products & Essentials</h1>
+        <p style="color: var(--text-muted); font-size: 1.2rem;">Curated Tools for Your Spiritual Journey</p>
+    </div>
+
+    <div class="content">
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Proceed to Checkout -->
+    <div style="text-align: center; margin: var(--spacing-xl) 0; padding: var(--spacing-xl) var(--spacing-lg);">
+        <button class="cta-button" onclick="proceedToCheckout()" style="padding: 1rem 2.5rem; font-size: 1.1rem;">
+            <i class="fas fa-shopping-cart"></i> Review Cart & Pay with UPI
+        </button>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a class="whatsapp-float" href="https://wa.me/919625746605" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <script src="logo.js"></script>
+    <script src="whatsapp-fix.js"></script>
+    <script>
+
+        const products = [
+            {
+                id: 1,
+                name: "Crystal Tarot Deck",
+                icon: "🃏",
+                price: 24.99,
+                description: "Premium hand-illustrated tarot deck with crystal elements"
+            },
+            {
+                id: 2,
+                name: "Selenite Crystal Wand",
+                icon: "✨",
+                price: 18.99,
+                description: "Cleansing and energy alignment tool"
+            },
+            {
+                id: 3,
+                name: "Zodiac Birthstone Ring",
+                icon: "💍",
+                price: 35.99,
+                description: "Personalized ring with your zodiac birthstone"
+            },
+            {
+                id: 4,
+                name: "Meditation Chakra Mat",
+                icon: "🧘",
+                price: 42.99,
+                description: "Chakra-aligned yoga and meditation mat"
+            },
+            {
+                id: 5,
+                name: "Astrological Candle Set",
+                icon: "🕯️",
+                price: 29.99,
+                description: "Set of 12 zodiac-inspired scented candles"
+            },
+            {
+                id: 6,
+                name: "Birth Chart Pendulum",
+                icon: "🔮",
+                price: 22.99,
+                description: "Divination tool inscribed with zodiac symbols"
+            },
+            {
+                id: 7,
+                name: "Lunar Phase Calendar",
+                icon: "🌙",
+                price: 19.99,
+                description: "Wall calendar tracking moon phases and zodiac information"
+            },
+            {
+                id: 8,
+                name: "Manifestation Journal",
+                icon: "📔",
+                price: 16.99,
+                description: "Premium leather-bound journal with guided manifestation prompts"
+            }
+        ];
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+        function formatPrice(price) {
+            return `Rs. ${Number(price || 0).toLocaleString('en-IN', {
+                minimumFractionDigits: Number.isInteger(Number(price || 0)) ? 0 : 2,
+                maximumFractionDigits: 2
+            })}`;
+        }
+
+        // Initialize Products
+        function initializeProducts() {
+            const productsGrid = document.getElementById('productsGrid');
+            productsGrid.innerHTML = '';
+
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-icon">${product.icon}</div>
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-description">${product.description}</div>
+                    <div class="product-price">${formatPrice(product.price)}</div>
+                    <div class="product-qty">
+                        <label style="color: var(--text-muted); font-size: 0.9rem;">Qty:</label>
+                        <input type="number" min="1" value="1" class="qty-input" id="qty-${product.id}">
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                `;
+                productsGrid.appendChild(productCard);
+            });
+        }
+
+        // Add to Cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const qty = Math.max(1, parseInt(document.getElementById(`qty-${productId}`).value, 10) || 1);
+
+            if (cart[productId]) {
+                cart[productId].quantity += qty;
+            } else {
+                cart[productId] = {
+                    ...product,
+                    quantity: qty
+                };
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${product.name} added to cart!`);
+        }
+
+        // Proceed to Checkout
+        function proceedToCheckout() {
+            if (Object.keys(cart).length === 0) {
+                alert('Please add items to your cart first!');
+                return;
+            }
+            window.location.href = 'checkout.html';
+        }
+
+        // Initialize on page load
+        window.addEventListener('load', () => {
+            initializeProducts();
+        });
+    </script>
+</body>
+</html>

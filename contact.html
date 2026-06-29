@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Divinity Swati Sobti</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <button class="back-button" onclick="window.location.href='index.html'">← Back Home</button>
+        <a class="logo" href="index.html" aria-label="Divinity Swati Sobti"><img src="public/divinity-logo.jpeg" alt="Divinity Swati Sobti Logo"></a>
+        <div style="width: 100px;"></div>
+    </nav>
+
+    <div class="page-title">
+        <h1>Get In Touch</h1>
+        <p style="color: var(--text-muted); font-size: 1.2rem;">We're Here to Help and Answer Any Question</p>
+    </div>
+
+    <div class="content">
+        <div class="contact-wrapper">
+            <div class="contact-form-section">
+                <h3>Send Us a Message</h3>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="+1 (234) 567-8900" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="How can we help?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Tell us more about your inquiry..." rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send on WhatsApp</button>
+                </form>
+            </div>
+
+            <div class="contact-info-section">
+                <h3>Contact Information</h3>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>
+                            <a href="tel:+917065013973">+91 70650 13973</a> - for calls<br>
+                            <a href="https://wa.me/919625746605" target="_blank" rel="noopener noreferrer">+91 96257 46605</a> - for whatsapp
+                        </p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:swattinsobti@gmail.com">swattinsobti@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-instagram"></i>
+                    <div>
+                        <h4>Instagram</h4>
+                        <p><a href="https://www.instagram.com/divinity_swatisobti/" target="_blank" rel="noopener noreferrer">@divinity_swatisobti</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Business Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: limited slots by appointments</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a class="whatsapp-float" href="https://wa.me/919625746605" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <script src="logo.js"></script>
+    <script src="whatsapp-fix.js"></script>
+    <script src="whatsapp-contact.js"></script>
+</body>
+</html>
